@@ -1,0 +1,46 @@
+.case {
+    display: flex;
+    max-width: 600px;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.case__header {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.case__title {
+    color: white;
+    font-family: 'Haas', sans-serif;
+    font-size: 96px;
+    line-height: 0.82;
+    margin: 0;
+    text-transform: lowercase;
+}
+
+.case__subtitle {
+    color: white;
+    font-family: 'PT Serif', serif;
+    margin: 0;
+    font-weight: 400;
+}
+
+.case__img {
+    animation: fade-in ease-in;
+    animation-timeline: view();
+}
+
+.case__toolbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 48px;
+    justify-content: start;
+}
+
+@keyframes fade-in {
+    from {opacity: 0; transform: translateY(50px);}
+    to {opacity: 1; transform: translateY(0px);}
+}

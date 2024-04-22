@@ -1,0 +1,41 @@
+.tool {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 20%;
+}
+
+.tool__img {
+    filter: grayscale(1);
+    height: 32px;
+    transition: filter .15s ease-in;
+}
+
+.tool:hover .tool__img {
+    filter: grayscale(0);
+}
+
+.tool__img_invert {
+    filter: grayscale(1) invert(1);
+}
+
+.tool:hover .tool__img_invert  {
+    filter: grayscale(0) invert(1);
+}
+
+.tool__name {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+    opacity: 1;
+    transition: opacity .15s ease-in;
+}
+
+.tool:hover .tool__name {
+    opacity: .7;
+}

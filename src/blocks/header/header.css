@@ -1,0 +1,53 @@
+.header {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--light);
+    z-index: 2;
+}
+
+.header__logo {
+    max-height: 50px;
+    display: none;
+}
+
+.header__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Haas", sans-serif;
+    text-transform: lowercase;
+    letter-spacing: .03em;
+}
+
+.header__menu-link {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .15s ease-in;
+}
+
+.header__menu-link:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 0 30px;
+    }  
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 0 14px;
+    }   
+}
