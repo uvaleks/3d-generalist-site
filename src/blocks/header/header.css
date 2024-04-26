@@ -1,11 +1,10 @@
 .header {
     position: fixed;
-    top: 50px;
+    top: 57px;
     right: 50px;
     text-align: end;
     display: flex;
     justify-content: end;
-    width: 100%;
     box-sizing: border-box;
     background-color: var(--light);
     z-index: 2;
@@ -28,16 +27,25 @@
     letter-spacing: .03em;
 }
 
+.header__menu-navlink {
+    text-decoration: none;
+    color: white;
+}
+
 .header__menu-link {
     color: white;
     text-decoration: none;
     cursor: pointer;
-    opacity: 1;
+    opacity: .6;
     transition: opacity .15s ease-in;
 }
 
 .header__menu-link:hover {
-    opacity: .7;
+    opacity: 1;
+}
+
+.header__menu-link_current {
+    opacity: 1;
 }
 
 @media screen and (max-width: 768px) {

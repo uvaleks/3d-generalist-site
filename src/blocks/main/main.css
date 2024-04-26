@@ -1,0 +1,30 @@
+.main__grid {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__case-link {
+    position: relative;
+}
+
+.main__case-number {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    background-color: black;
+    font-family: "Haas", sans-serif;
+    bottom: 18px;
+    right: 14px;
+    padding: 2px 7px 5px 6px;
+    font-size: 18px;
+}
+
+.main__contacts-avatar {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
