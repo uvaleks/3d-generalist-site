@@ -55,28 +55,87 @@ function App() {
           <Route path="*" element={<Navigate to="/#main-heading" />}/>
           <Route path="/" element={
             <>
-              {/* <div className="case__header case__header_hero" id="main-heading" smooth>
-                <h1 className="case__title">Ivan Cherganov<br/>3D Generalist</h1>
+              {/* <div className="main__title" id="main-heading" smooth>
+                <h1 className="main__title-heading">Cherganov</h1>
               </div> */}
+              <div className="main__title-letters" id="main-heading" smooth>
+                <p className="main__title-heading-letter">c</p>
+                <p className="main__title-heading-letter">h</p>
+                <p className="main__title-heading-letter">e</p>
+                <p className="main__title-heading-letter">r</p>
+                <p className="main__title-heading-letter">g</p>
+                <p className="main__title-heading-letter">a</p>
+                <p className="main__title-heading-letter">n</p>
+                <p className="main__title-heading-letter">o</p>
+                <p className="main__title-heading-letter">v</p>
+              </div>
               <div className="main__grid">
               <NavHashLink
-                className='main__case-link'
+                className='main__grid-link main__grid_sanada-01'
                 to='/samurai-portrait#samurai-heading' smooth>
-                  <img className="case__img case__img_contrast" src={window.location.origin + `/images/samurai/ivan-cherganov-samurai-portrait-05.jpg`} alt="Sanada"/>
-                  <div className="main__case-number">01</div>
+                  <img className="main__grid-img" src={window.location.origin + `/images/grid/01-samurai-01.jpg`} alt="Sanada"/>
+                  <div className="main__grid-img-number">01</div>
+              </NavHashLink>
+              <NavHashLink
+                className='main__grid-link main__grid_sanada-02'
+                to='/samurai-portrait#samurai-heading' smooth>
+                  <img className="main__grid-img" src={window.location.origin + `/images/grid/01-samurai-02.jpg`} alt="Sanada"/>
+                  <div className="main__grid-img-number">01</div>
+              </NavHashLink>
+              <NavHashLink
+                className='main__grid-link main__grid_sanada-03'
+                to='/samurai-portrait#samurai-heading' smooth>
+                  <img className="main__grid-img" src={window.location.origin + `/images/grid/01-samurai-03.jpg`} alt="Sanada"/>
+                  <div className="main__grid-img-number">01</div>
+              </NavHashLink>
+              <NavHashLink
+                className='main__grid-link main__grid_hairstyles-01'
+                to='/hairstyles#hairstyles-heading' smooth>
+                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-01.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number">02</div>
               </NavHashLink>
               {/* <NavHashLink
-                to='/ideal-husband#ideal-husband-heading' smooth>
-                <img className="case__img case__img_contrast" src={window.location.origin + `/images/ideal-husband/ivan-cherganov-lady-chiltern.jpg`} alt="Lady Chiltern"/>
+                className='main__grid-link main__grid_hairstyles-02'
+                to='/hairstyles#hairstyles-heading' smooth>
+                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-02.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number">02</div>
               </NavHashLink> */}
               <NavHashLink
-                className='main__case-link'
+                className='main__grid-link main__grid_hairstyles-04'
                 to='/hairstyles#hairstyles-heading' smooth>
-                <img className="case__img case__img_contrast" src={window.location.origin + `/images/hairstyles/ivan-cherganov-photoreal-hairstyle-beauty-render-front.jpg`} alt="Hairstyle"/>
-                <div className="main__case-number">02</div>
+                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-04.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number">02</div>
               </NavHashLink>
-
-              {/* <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-all.jpg`} alt="Facial Anatomy Studies"/> */}
+              <NavHashLink
+                className='main__grid-link main__grid_hairstyles-05'
+                to='/hairstyles#hairstyles-heading' smooth>
+                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-05.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number">02</div>
+              </NavHashLink>
+              <NavHashLink
+                className='main__grid-link main__grid_husband-01'
+                to='/ideal-husband#ideal-husband-heading' smooth>
+                <img className="main__grid-img main__grid-img_husband-01" src={window.location.origin + `/images/grid/03-husband-01.jpg`} alt="An Ideal Husband"/>
+                <div className="main__grid-img-number">03</div>
+              </NavHashLink>
+              <NavHashLink
+                className='main__grid-link main__grid_husband-02'
+                to='/ideal-husband#ideal-husband-heading' smooth>
+                <img className="main__grid-img main__grid-img_husband-02" src={window.location.origin + `/images/grid/03-husband-02.jpg`} alt="An Ideal Husband"/>
+                <div className="main__grid-img-number">03</div>
+              </NavHashLink>
+              {/* <NavHashLink
+                className='main__grid-link main__grid_facial-anatomy-01'
+                to='/facial-anatomy#facial-anatomy-heading' smooth>
+                <img className="main__grid-img" src={window.location.origin + `/images/grid/04-face-anatomy-01.jpg`} alt="Facial Anatomy"/>
+                <div className="main__grid-img-number">04</div>
+              </NavHashLink> */}
+              <NavHashLink
+                className='main__grid-link main__grid_facial-anatomy-02'
+                to='/facial-anatomy#facial-anatomy-heading' smooth>
+                <img className="main__grid-img" src={window.location.origin + `/images/grid/04-face-anatomy-02.jpg`} alt="Facial Anatomy"/>
+                <div className="main__grid-img-number">04</div>
+              </NavHashLink>
               </div>
             </>
           } />
@@ -176,7 +235,7 @@ function App() {
           <Route path="/facial-anatomy" element={
             <Case>
               <>
-                <div className="case__header" id="facial-anatomy-heading" smooth>
+                <div className="case__header case__header_hero" id="facial-anatomy-heading" smooth>
                   <h1 className="case__title">Facial Anatomy Studies</h1>
                   <div className="case__toolbox">
                     <Tool
@@ -190,7 +249,7 @@ function App() {
                     />
                   </div>
                 </div>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-01.jpg`} alt="Facial Anatomy Studies"/>
+                <img className="case__img case__img_hero" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-01.jpg`} alt="Facial Anatomy Studies"/>
                 <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-03.jpg`} alt="Facial Anatomy Studies"/>
                 <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-04.jpg`} alt="Facial Anatomy Studies"/>
                 <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-05.jpg`} alt="Facial Anatomy Studies"/>

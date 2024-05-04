@@ -48,23 +48,6 @@
     max-width: 100%;
 }
 
-.case__img_contrast {
-    filter: contrast(200%) saturate(0%);
-    transition: filter .2s ease-in;
-    cursor: pointer;
-    max-height: 600px;
-    /* border-radius: 20px; */
-}
-
-.case__img_contrast:hover {
-    filter: none;
-}
-
-.case__img_contrast:active {
-    filter: contrast(200%) saturate(0%);
-    transition: filter .05s ease-in;
-}
-
 .case__toolbox {
     display: flex;
     flex-direction: row;
