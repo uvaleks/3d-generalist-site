@@ -1,3 +1,29 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.main__title {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-self: start;
+    padding: 33px 0 50px 50px;
+}
+
+.main__title-heading {
+    color: white;
+    font-family: 'Haas', sans-serif;
+    font-size: 72px;
+    line-height: 0.82;
+    margin: 0;
+    text-transform: lowercase;
+    text-align: start;
+}
+
 .main__title-letters {
     display: flex;
     width: 100%;
@@ -20,9 +46,15 @@
     grid-template-columns: repeat(4, 200px);
     grid-template-rows: repeat(4, 200px);
     gap: 24px;
-    padding-bottom: 50px;
+    padding: 50px 0;
     /* width: 920px;
     height: 1880px; */
+}
+
+.main__grid-link {
+    background: repeating-linear-gradient(135deg, transparent, transparent 10px, white 5px, white 12px);
+    line-height: 0;
+    position: relative;
 }
 
 .main__grid-img {
@@ -36,8 +68,35 @@
     cursor: pointer;
 }
 
-.main__grid-img:hover {
-    filter: none;
+.main__grid-link:hover > .main__grid-img {
+    filter: saturate(100%) brightness(110%);
+}
+
+.main__grid-link:hover > .main__grid-img_husband-02 {
+    filter: saturate(100%) brightness(95%);
+}
+
+.main__grid-img-number {
+    text-decoration: none;
+    color: gray;
+    position: absolute;
+    background-color: black;
+    font-family: "Haas", sans-serif;
+    bottom: 0px;
+    right: 0px;
+    font-size: 18px;
+    line-height: 14px;
+    height: 22px;
+    width: 32px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    border-start-start-radius: 20px;
+    transition: color .15s ease-in;
+}
+
+.main__grid-link:hover > .main__grid-img-number {
+    color: white;
 }
 
 .main__grid_sanada-01 {
@@ -95,34 +154,6 @@
     grid-column: 4 / 5;
 }
 
-.main__title {
-    padding: 40px 0;
-}
-
-.main__title-heading {
-    color: white;
-    font-family: 'Haas', sans-serif;
-    font-size: 72px;
-    line-height: 0.82;
-    margin: 0;
-    text-transform: lowercase;
-    text-align: center;
-}
-
-.main__grid-link {
-    background: repeating-linear-gradient(135deg, transparent, transparent 10px, white 5px, white 12px);
-    line-height: 0;
-    position: relative;
-}
-
-.main__grid_husband-02:hover {
-    filter: none;
-}
-
-.main__grid_husband-02:hover + .main__title-heading-letter  {
-    opacity: 0;
-}
-
 .main__grid_husband-01:hover {
     filter: none;
 }
@@ -139,33 +170,4 @@
 .main__grid-img_contrast:active {
     filter: contrast(200%) saturate(0%);
     transition: filter .05s ease-in;
-}
-
-.main__grid-img-number {
-    text-decoration: none;
-    color: gray;
-    position: absolute;
-    background-color: black;
-    font-family: "Haas", sans-serif;
-    bottom: 0px;
-    right: 0px;
-    font-size: 18px;
-    line-height: 14px;
-    height: 22px;
-    width: 32px;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    border-start-start-radius: 20px;
-    transition: color .15s ease-in;
-}
-
-.main__grid-img:hover + .main__grid-img-number {
-    color: white;
-}
-
-.main__contacts-avatar {
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
 }

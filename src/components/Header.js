@@ -11,7 +11,9 @@ function Header() {
     <ul className="header__menu">
       <NavHashLink
         className={`header__menu-link${`${location.pathname}${location.hash}` === '/#main-heading' ? " header__menu-link_current" : ""}`}
-        to='/#main-heading' smooth>Main</NavHashLink>
+        to='/#main-heading' smooth>
+        <p className="header__menu-link-p"><span className="header__menu-link-span">00</span>Main</p>
+        </NavHashLink>
       <NavHashLink
         className={`header__menu-link${`${location.pathname}${location.hash}` === '/samurai-portrait#samurai-heading' ? " header__menu-link_current" : ""}`}
         to='/samurai-portrait#samurai-heading' smooth>Samurai Portrait</NavHashLink>

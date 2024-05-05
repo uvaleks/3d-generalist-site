@@ -6,6 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Tool from './Tool';
 import Case from './Case';
+import Contacts from './Contacts';
 
 function App() {
   const navigate = useNavigate();
@@ -55,10 +56,11 @@ function App() {
           <Route path="*" element={<Navigate to="/#main-heading" />}/>
           <Route path="/" element={
             <>
-              {/* <div className="main__title" id="main-heading" smooth>
-                <h1 className="main__title-heading">Cherganov</h1>
-              </div> */}
-              <div className="main__title-letters" id="main-heading" smooth>
+              <div className="main__title" id="main-heading" smooth>
+                <h1 className="main__title-heading">Ivan<br/>Cher-<br/>ganov</h1>
+                <h2 className="case__subtitle">3D Generalist<br/>Portfolio</h2>
+              </div>
+              {/* <div className="main__title-letters" id="main-heading" smooth>
                 <p className="main__title-heading-letter">c</p>
                 <p className="main__title-heading-letter">h</p>
                 <p className="main__title-heading-letter">e</p>
@@ -68,7 +70,7 @@ function App() {
                 <p className="main__title-heading-letter">n</p>
                 <p className="main__title-heading-letter">o</p>
                 <p className="main__title-heading-letter">v</p>
-              </div>
+              </div> */}
               <div className="main__grid">
               <NavHashLink
                 className='main__grid-link main__grid_sanada-01'
@@ -148,18 +150,23 @@ function App() {
                 <Tool
                     img={'/images/tools-logo/tool-logo-arnold-color.png'}
                     name={'Arnold'}
+                    light={true}
                 />
                 <Tool
                     img={'/images/tools-logo/tool-logo-maya-color.png'}
                     name={'Maya'}
+                    light={true}
                 />
                 <Tool
                     img={'/images/tools-logo/tool-logo-substance-color.svg'}
                     name={'Substance\n3D Painter'}
+                    light={true}
+                    invert={true}
                 />
                 <Tool
                     img={'/images/tools-logo/tool-logo-zbrush.svg'}
                     name={'ZBrush'}
+                    light={true}
                     invert={true}
                 />
                 </div>
@@ -223,6 +230,8 @@ function App() {
                 <Tool
                     img={'/images/tools-logo/tool-logo-ps-color.png'}
                     name={'Photoshop'}
+                    light={true}
+                    invert={true}
                 />
                 </div>
               </div>
@@ -241,11 +250,13 @@ function App() {
                     <Tool
                       img={'/images/tools-logo/tool-logo-zbrush.svg'}
                       name={'ZBrush'}
+                      light={true}
                       invert={true}
                     />
                     <Tool
                       img={'/images/tools-logo/tool-logo-arnold-color.png'}
                       name={'Arnold'}
+                      light={true}
                     />
                   </div>
                 </div>
@@ -263,42 +274,83 @@ function App() {
             </Case>
           } />
           <Route path="/contacts" element={
-            <>
-              <div className="case__header" id="contacts-heading" smooth>
-                <h1 className="case__title">Contacts</h1>
-                <img className="main__contacts-avatar" src={window.location.origin + `/images/ivan-cherganov-avatar.jpg`} alt="Ivan Cherganov Avatar"/>
-
-                <div className="case__toolbox">
-                  <Tool
-                    img={'/images/tools-logo/tool-logo-maya-color.png'}
-                    name={'Maya'}
-                  />
-                  <Tool
-                    img={'/images/tools-logo/tool-logo-arnold-color.png'}
-                    name={'Arnold'}
-                  />
-                  <Tool
-                    img={'/images/tools-logo/tool-logo-zbrush.svg'}
-                    name={'ZBrush'}
-                    invert={true}
-                  /> 
+            <Contacts id="contacts-heading" smooth>
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Ivan Cherganov</h2>
+                  <img className="contacts__avatar" src={window.location.origin + `/images/ivan-cherganov-avatar.jpg`} alt="Ivan Cherganov Avatar"/>
                 </div>
-                <div className="case__toolbox">
-                  <Tool
-                    img={'/images/tools-logo/tool-logo-substance-color.svg'}
-                    name={'Substance\n3D Painter'}
-                  />
-                  <Tool
-                    img={'/images/tools-logo/tool-logo-ps-color.png'}
-                    name={'Photoshop'}
-                  />
-                  <Tool
-                    img={'/images/tools-logo/tool-logo-lightroom.svg'}
-                    name={'Lightroom'}
-                  />
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Tools</h2>
+                  <div className="case__toolbox">
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-maya-color.png'}
+                      name={'Maya'}
+                      light={true}
+                    />
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-arnold-color.png'}
+                      name={'Arnold'}
+                      light={true}
+                    />
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-zbrush.svg'}
+                      name={'ZBrush'}
+                      light={true}
+                      invert={true}
+                    /> 
+                  </div>
+                  <div className="case__toolbox">
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-substance-color.svg'}
+                      name={'Substance\n3D Painter'}
+                      light={true}
+                      invert={true}
+                    />
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-ps-color.png'}
+                      name={'Photoshop'}
+                      light={true}
+                      invert={true}
+                    />
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-lightroom.svg'}
+                      name={'Lightroom'}
+                      light={true}
+                      invert={true}
+                    />
+                  </div>
                 </div>
-              </div>
-            </>
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Skills</h2>
+                  <div className="contacts__point">
+                    <p className="contacts__skill">3D Modeling</p>
+                    <p className="contacts__skill">Character Modeling</p>
+                    <p className="contacts__skill">Grooming</p>
+                    <p className="contacts__skill"> PBR Texturing</p>
+                  </div>
+                </div>
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Experience</h2>
+                  <div className="contacts__point">
+                    <p className="contacts__period">2021-2023</p>
+                    <img className="contacts__img" src='images/ubisoft-quebec-logo.svg' alt="Ubisoft Quebec"/>
+                    <p className="contacts__text">3D Character Artist</p>
+                  </div>
+                </div>
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Education</h2>
+                  <div className="contacts__point">
+                    <p className="contacts__period">2014-2016</p>
+                    <img className="contacts__img" src='images/scream-school-logo.svg' alt="Scream School"/>
+                    <p className="contacts__text">Visual effects and Character Art for films</p>
+                  </div>
+                </div>
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Contact</h2>
+                  <p className="contacts__text">ivan.cherganov@gmail.com</p>
+                  <p className="contacts__text">www.artstation.com/ivan_cherganov</p>
+                </div>
+            </Contacts>
           } />
         </Routes>
       </main>

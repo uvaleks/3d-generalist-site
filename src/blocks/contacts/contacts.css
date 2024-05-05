@@ -1,0 +1,56 @@
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contacts__avatar {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+
+.contacts__title {
+
+}
+
+.contacts__subtitle {
+    color: white;
+    font-family: "Haas";
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+.contacts__point {
+    display: flex;
+    gap: 10px;
+}
+
+.contacts__period {
+    color: gray;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+}
+
+.contacts__text {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+}
+
+.contacts__skill {
+    background: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
