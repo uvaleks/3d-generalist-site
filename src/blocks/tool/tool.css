@@ -1,8 +1,7 @@
 .tool {
-    cursor: pointer;
     display: flex;
     flex-direction: row;
-    gap: 14px;
+    gap: 10px;
     justify-content: start;
     align-items: center;
     max-width: 20%;
@@ -51,8 +50,14 @@
     margin: 0;
     /* opacity: .7; */
     transition: opacity .15s ease-in;
+    white-space: pre-wrap;
 }
 
 /* .tool:hover .tool__name {
     opacity: 1;
 } */
+
+.tool_contacts {
+    max-width: unset;
+    min-width: unset;
+}

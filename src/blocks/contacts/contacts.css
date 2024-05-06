@@ -2,17 +2,16 @@
 .contacts {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 45px;
+    padding: 50px 0;
 }
 
 .contacts__avatar {
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-}
-
-.contacts__title {
-
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    left: 100px;
+    top: 50px;
 }
 
 .contacts__subtitle {
@@ -24,7 +23,41 @@
 
 .contacts__point {
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.contacts__point:hover > .contacts__img {
+    opacity: .7;
+}
+
+.contacts__point:hover > .contacts__text {
+    opacity: .7;
+}
+
+.contacts__point:hover > .contacts__period {
+    opacity: .7;
+}
+
+.contacts__point_exp {
+    gap: 20px;
+}
+
+.contacts__img {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .15s ease-in;
+    height: 32px;
+}
+
+.contacts__img_scream-school {
+    height: 16px;
+    padding-bottom: 4px;
+}
+
+.contacts__img:hover {
+    opacity: .7;
 }
 
 .contacts__period {
@@ -33,14 +66,18 @@
     font-size: 12px;
     line-height: 16px;
     margin: 0;
+    opacity: 1;
+    transition: opacity .15s ease-in;
 }
 
 .contacts__text {
     color: white;
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 16px;
     margin: 0;
+    opacity: 1;
+    transition: opacity .15s ease-in;
 }
 
 .contacts__skill {
@@ -53,4 +90,58 @@
     color: black;
     font-weight: 600;
     letter-spacing: 0.02em;
+    margin: 0;
+}
+
+.contacts__toolbox {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: start;
+}
+
+.contacts__block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacts__block_first {
+    flex-direction: row;
+}
+
+.contacts__button-img {
+    filter: brightness(0);
+    height: 18px;
+}
+
+.contacts__button {
+    background: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0;
+    display: flex;
+    width: max-content;
+    padding: 7px 12px 7px 10px;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    opacity: 1;
+    text-decoration: none;
+    transition: opacity .15s ease-in;
+}
+
+.contacts__button-text {
+    margin: 0;
+    text-decoration: none;
+    color: black;
+}
+
+.contacts__button:hover {
+    opacity: .7;
 }

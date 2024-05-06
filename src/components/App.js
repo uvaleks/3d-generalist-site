@@ -269,54 +269,87 @@ function App() {
                 <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-all.jpg`} alt="Facial Anatomy Studies"/>
                 <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-process-gif.gif`} alt="Facial Anatomy Studies"/>
                 <img className="case__img case__img_hero" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-bale.jpg`} alt="Bale"/>
-
               </>
             </Case>
           } />
           <Route path="/contacts" element={
             <Contacts id="contacts-heading" smooth>
+                <img className="contacts__avatar" src="images/contacts/ivan-cherganov-avatar-tall.jpeg" alt="Ivan Cherganov Avatar"/>
                 <div className="contacts__block">
                   <h2 className="contacts__subtitle">Ivan Cherganov</h2>
-                  <img className="contacts__avatar" src={window.location.origin + `/images/ivan-cherganov-avatar.jpg`} alt="Ivan Cherganov Avatar"/>
+                  <p className="contacts__text">I'm a 3D Character Artist / 3D Grooming Artist working in the game and film industry</p>
+                  <div className="contacts__point">
+                    <a href="https://t.me/ivan_cherganov" target='_blank' rel="noreferrer" className="contacts__button">
+                      <img className="contacts__button-img" src='images/contacts/telegram-logo-button.png' alt="Telegram"/>
+                      <p className="contacts__button-text">Write me a message</p>
+                    </a>
+                    <a href="mailto:ivan.cherganov@gmail.com" className="contacts__button">
+                      <img className="contacts__button-img" src='images/contacts/email-button.png' alt="Email"/>
+                      <p className="contacts__button-text">Write me an email</p>
+                    </a>
+                    <a href="https://www.artstation.com/ivan_cherganov" target='_blank' rel="noreferrer" className="contacts__button">
+                      <img className="contacts__button-img" src='images/contacts/artstation-logo-button.svg' alt="ArtStation"/>
+                    </a>
+                  </div>
+                </div>
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Experience</h2>
+                  <a href="https://quebec.ubisoft.com" target='_blank' rel="noreferrer" className="contacts__point contacts__point_exp">
+                    <p className="contacts__period">2021–2023</p>
+                    <img className="contacts__img" src='images/contacts/ubisoft-quebec-logo.svg' alt="Ubisoft Quebec"/>
+                    <p className="contacts__text">3D Character Artist</p>
+                  </a>
+                </div>
+                <div className="contacts__block">
+                  <h2 className="contacts__subtitle">Education</h2>
+                  <a href="https://scream.school" target='_blank' rel="noreferrer" className="contacts__point contacts__point_exp">
+                    <p className="contacts__period">2014–2016</p>
+                    <img className="contacts__img contacts__img_scream-school" src='images/contacts/scream-school-logo.svg' alt="Scream School"/>
+                    <p className="contacts__text">Visual effects and Character Art for films</p>
+                  </a>
                 </div>
                 <div className="contacts__block">
                   <h2 className="contacts__subtitle">Tools</h2>
-                  <div className="case__toolbox">
-                    <Tool
-                      img={'/images/tools-logo/tool-logo-maya-color.png'}
-                      name={'Maya'}
-                      light={true}
-                    />
-                    <Tool
-                      img={'/images/tools-logo/tool-logo-arnold-color.png'}
-                      name={'Arnold'}
-                      light={true}
-                    />
-                    <Tool
-                      img={'/images/tools-logo/tool-logo-zbrush.svg'}
-                      name={'ZBrush'}
-                      light={true}
-                      invert={true}
-                    /> 
-                  </div>
-                  <div className="case__toolbox">
-                    <Tool
+                  <div className="contacts__toolbox">
+                  <Tool
                       img={'/images/tools-logo/tool-logo-substance-color.svg'}
                       name={'Substance\n3D Painter'}
                       light={true}
                       invert={true}
+                      contacts={true}
                     />
                     <Tool
                       img={'/images/tools-logo/tool-logo-ps-color.png'}
                       name={'Photoshop'}
                       light={true}
                       invert={true}
+                      contacts={true}
                     />
                     <Tool
                       img={'/images/tools-logo/tool-logo-lightroom.svg'}
                       name={'Lightroom'}
                       light={true}
                       invert={true}
+                      contacts={true}
+                    />
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-maya-color.png'}
+                      name={'Maya'}
+                      light={true}
+                      contacts={true}
+                    />
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-arnold-color.png'}
+                      name={'Arnold'}
+                      light={true}
+                      contacts={true}
+                    />
+                    <Tool
+                      img={'/images/tools-logo/tool-logo-zbrush.svg'}
+                      name={'ZBrush'}
+                      light={true}
+                      invert={true}
+                      contacts={true}
                     />
                   </div>
                 </div>
@@ -328,27 +361,6 @@ function App() {
                     <p className="contacts__skill">Grooming</p>
                     <p className="contacts__skill"> PBR Texturing</p>
                   </div>
-                </div>
-                <div className="contacts__block">
-                  <h2 className="contacts__subtitle">Experience</h2>
-                  <div className="contacts__point">
-                    <p className="contacts__period">2021-2023</p>
-                    <img className="contacts__img" src='images/ubisoft-quebec-logo.svg' alt="Ubisoft Quebec"/>
-                    <p className="contacts__text">3D Character Artist</p>
-                  </div>
-                </div>
-                <div className="contacts__block">
-                  <h2 className="contacts__subtitle">Education</h2>
-                  <div className="contacts__point">
-                    <p className="contacts__period">2014-2016</p>
-                    <img className="contacts__img" src='images/scream-school-logo.svg' alt="Scream School"/>
-                    <p className="contacts__text">Visual effects and Character Art for films</p>
-                  </div>
-                </div>
-                <div className="contacts__block">
-                  <h2 className="contacts__subtitle">Contact</h2>
-                  <p className="contacts__text">ivan.cherganov@gmail.com</p>
-                  <p className="contacts__text">www.artstation.com/ivan_cherganov</p>
                 </div>
             </Contacts>
           } />
