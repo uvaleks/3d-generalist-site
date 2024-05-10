@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/cherganov/static/css/main.b5ed3d61.css",
+    "main.js": "/cherganov/static/js/main.eab23823.js",
+    "static/media/Haas.otf": "/cherganov/static/media/Haas.3cb6539d76a9a68a14fe.otf",
+    "static/media/Haas.svg": "/cherganov/static/media/Haas.d2ebb93e0ac23f824f53.svg",
+    "static/media/Haas.ttf": "/cherganov/static/media/Haas.2b1a8d01c605a3436df6.ttf",
+    "static/media/Haas.woff2": "/cherganov/static/media/Haas.d7f6c3bfd589f1104cb4.woff2",
+    "index.html": "/cherganov/index.html",
+    "main.b5ed3d61.css.map": "/cherganov/static/css/main.b5ed3d61.css.map",
+    "main.eab23823.js.map": "/cherganov/static/js/main.eab23823.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5ed3d61.css",
+    "static/js/main.eab23823.js"
+  ]
+}
