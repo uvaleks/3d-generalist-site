@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/3d-generalist-site/static/css/main.423f96d4.css",
-    "main.js": "/3d-generalist-site/static/js/main.92b7ed9e.js",
+    "main.js": "/3d-generalist-site/static/js/main.3947fe6c.js",
     "static/media/Haas.otf": "/3d-generalist-site/static/media/Haas.3cb6539d76a9a68a14fe.otf",
     "static/media/Haas.svg": "/3d-generalist-site/static/media/Haas.d2ebb93e0ac23f824f53.svg",
     "static/media/Haas.ttf": "/3d-generalist-site/static/media/Haas.2b1a8d01c605a3436df6.ttf",
     "static/media/Haas.woff2": "/3d-generalist-site/static/media/Haas.d7f6c3bfd589f1104cb4.woff2",
     "index.html": "/3d-generalist-site/index.html",
     "main.423f96d4.css.map": "/3d-generalist-site/static/css/main.423f96d4.css.map",
-    "main.92b7ed9e.js.map": "/3d-generalist-site/static/js/main.92b7ed9e.js.map"
+    "main.3947fe6c.js.map": "/3d-generalist-site/static/js/main.3947fe6c.js.map"
   },
   "entrypoints": [
     "static/css/main.423f96d4.css",
-    "static/js/main.92b7ed9e.js"
+    "static/js/main.3947fe6c.js"
   ]
 }
