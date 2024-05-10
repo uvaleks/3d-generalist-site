@@ -1,4 +1,11 @@
 @font-face {
     font-family: 'Haas';
-    src: url("./font/Haas.woff2") format('woff2');
+    font-style:  normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("./font/Haas.woff2") format('woff2'),
+    url("./font/Haas.ttf") format('truetype'),
+    url("./font/Haas.svg") format('svg'),
+    url("./font/Haas.otf") format('otf');
 }
+

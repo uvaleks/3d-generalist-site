@@ -11,12 +11,18 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-top: 50px;
+    padding-top: 33px;
     z-index: 1;
 }
 
 .case__header_hero {
     max-width: 400px;
+    position: absolute;
+    padding-left: 50px;
+    left: 0;
+}
+
+.case__header_hero-left {
     position: absolute;
     padding-left: 50px;
     left: 0;
@@ -36,12 +42,15 @@
     font-family: 'PT Serif', serif;
     margin: 0;
     font-weight: 400;
+    line-height: 1.2;
 }
 
 .case__img {
-    max-width: 600px;
+    view-timeline-name: --subjectReveal;
+    animation-timeline: --subjectReveal;
+    max-width: calc(100vh - 200px);
     animation: fade-in 1s ease-in;
-    animation-timeline: view();
+    /* animation-timeline: view(10px, 10px); */
 }
 
 .case__img_hero {
@@ -52,13 +61,37 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap: 48px;
+    gap: 24px;
     justify-content: start;
 }
 
 .case__toolbox_hero {
     flex-direction: column;
-    gap: 24px;
+}
+
+.case_facial-anatomy {
+    background-color: rgb(80, 80, 80);
+}
+
+.case__img-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.case__img-wrapper_husband {
+    margin-top: 50px;
+}
+
+.case__img-wrapper_anatomy {
+    margin-top: 200px;
+}
+
+.case__img-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(180deg, rgb(80, 80, 80) 0%, rgba(80,80,80,0) 10%);
 }
 
 @keyframes fade-in {

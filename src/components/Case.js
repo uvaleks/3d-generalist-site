@@ -1,8 +1,8 @@
-function Case({children}) {
+function Case({ caseStyle, children }) {
 
     return (
         <>
-            <section className="case">
+            <section className={`case ${caseStyle ? caseStyle : ""}`}>
                 {children}
             </section>
         </>

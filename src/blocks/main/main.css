@@ -6,18 +6,21 @@
 }
 
 .main__title {
-    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    align-self: start;
-    padding: 33px 0 50px 50px;
+    padding: 40px 0 0 50px;
+    /* max-width: 1200px; */
+    box-sizing: border-box;
+    width: 100%;
+    height: 260px;
+    justify-content: space-between;
 }
 
 .main__title-heading {
     color: white;
     font-family: 'Haas', sans-serif;
-    font-size: 72px;
+    font-size: 80px;
     line-height: 0.82;
     margin: 0;
     text-transform: lowercase;
@@ -42,17 +45,23 @@
 }
 
 .main__grid {
+    /* max-width: 1200px; */
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(4, 200px);
-    gap: 24px;
-    padding: 50px 0;
+    /* grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr); */
+    grid-template-columns: repeat(var(--columns), calc(100cqi/var(--columns) - var(--gutter-size)*var(--gutters)/var(--columns)));
+    grid-template-rows: repeat(var(--columns) - calc(100cqi/var(--columns) - var(--gutter-size)*var(--gutters)/var(--columns)));
+    gap: 2vw;
+    padding: 50px 240px 75px 50px;
+    box-sizing: border-box;
     /* width: 920px;
     height: 1880px; */
 }
 
 .main__grid-link {
-    background: repeating-linear-gradient(135deg, transparent, transparent 10px, white 5px, white 12px);
+    /* background: repeating-linear-gradient(135deg, transparent, transparent 10px, white 5px, white 12px); */
+    background: repeating-linear-gradient(135deg, transparent, transparent 15px, rgba(255, 255, 255, .33) 15px, rgba(255, 255, 255, .33) 16px);
     line-height: 0;
     position: relative;
 }
@@ -61,11 +70,16 @@
     /* filter: contrast(200%) saturate(0%); */
     object-fit: cover;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     filter: saturate(0%);
     transition: filter .15s ease-in;
     /* mix-blend-mode: multiply; */
     cursor: pointer;
+    /* box-shadow:
+    0px 0px 6.8px rgba(0, 0, 0, 0.23),
+    0px 0px 18.8px rgba(0, 0, 0, 0.33),
+    0px 0px 45.2px rgba(0, 0, 0, 0.43),
+    0px 0px 150px rgba(0, 0, 0, 0.66); */
 }
 
 .main__grid-link:hover > .main__grid-img {
@@ -76,31 +90,52 @@
     filter: saturate(100%) brightness(95%);
 }
 
-.main__grid-img-number {
+.main__grid-link:hover > .main__grid-img_husband-01 {
+    filter: saturate(100%) contrast(100%) brightness(95%);
+}
+
+.main__grid-img-number-wrapper {
+    bottom: 0px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-color: transparent black black transparent;
+    border-width: 20px;
+    border-style: solid;
     text-decoration: none;
     color: gray;
     position: absolute;
-    background-color: black;
-    font-family: "Haas", sans-serif;
-    bottom: 0px;
-    right: 0px;
+    /* background-color: black; */
+    font-family: 'Haas', sans-serif;
     font-size: 18px;
     line-height: 14px;
-    height: 22px;
-    width: 32px;
+    /* height: 22px; */
+    /* width: 32px; */
     display: flex;
     justify-content: end;
     align-items: end;
-    border-start-start-radius: 20px;
+    /* border-start-start-radius: 20px; */
     transition: color .15s ease-in;
 }
 
-.main__grid-link:hover > .main__grid-img-number {
+.main__grid-img-number {
+    text-decoration: none;
+    color: gray;
+    font-family: 'Haas', sans-serif;
+    font-size: 18px;
+    line-height: 14px;
+    transition: color .15s ease-in;
+    bottom: -20px;
+    position: absolute;
+    right: -20px;
+}
+
+.main__grid-link:hover > .main__grid-img-number-wrapper > .main__grid-img-number {
     color: white;
 }
 
 .main__grid_sanada-01 {
-    grid-row: 4 / 5;
+    grid-row: 5 / 6;
     grid-column: 4 / 5;
 }
 
@@ -125,12 +160,17 @@
 }
 
 .main__grid_hairstyles-04 {
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
     grid-column: 3 / 5;
 }
 
+/* .main__grid_hairstyles-05 {
+    grid-row: 5 / 6;
+    grid-column: 4 / 5;
+} */
+
 .main__grid_husband-01 {
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
     grid-column: 2 / 3;
 }
 
@@ -140,7 +180,7 @@
 }
 
 .main__grid_husband-02 {
-    grid-row: 1 / 2;
+    grid-row: 2 / 3;
     grid-column: 3 / 4;
 }
 
@@ -149,17 +189,25 @@
     transition: filter .15s ease-in;
 }
 
-.main__grid_facial-anatomy-02 {
-    grid-row: 1 / 2;
-    grid-column: 4 / 5;
+.main__grid_blank-01 {
+    aspect-ratio: 1;
+}
+
+.main__grid_blank-02 {
+    aspect-ratio: 1;
+}
+
+.main__grid_facial-anatomy-03 {
+    grid-row: 5 / 6;
+    grid-column: 1 / 4;
 }
 
 .main__grid_husband-01:hover {
     filter: none;
 }
 
-.main__grid-img:active {
-    filter: contrast(150%);
+.main__grid-link:active > .main__grid-img {
+    filter: contrast(125%);
     transition: filter .05s ease-in;
 }
 

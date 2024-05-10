@@ -4,8 +4,8 @@
     gap: 10px;
     justify-content: start;
     align-items: center;
-    max-width: 20%;
-    min-width: 107px;
+    /* max-width: 20%;
+    min-width: 107px; */
 }
 
 .tool__img {

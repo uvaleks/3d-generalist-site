@@ -11,11 +11,32 @@ import Contacts from './Contacts';
 function App() {
   const navigate = useNavigate();
   const [count, setCount] = useState(6);
+  const [tale, setTale] = useState('');
 
-  useEffect(() => {
-      window.addEventListener('scroll', scrollProgress);
-      return () => window.removeEventListener('scroll', scrollProgress);
-  }, [])
+  function MouseOver(event) {
+    if (event.target.src) {
+      if (event.target.src.includes('samurai')) {
+        setTale('samurai');
+      } else if (event.target.src.includes('hairstyles')) {
+        setTale('hairstyles');
+      } else if (event.target.src.includes('anatomy')) {
+        setTale('anatomy');
+      } else if (event.target.src.includes('husband')) {
+        setTale('husband');
+      }
+    }
+    console.log(tale)
+  }
+
+  function MouseOut(event) {
+    setTale('');
+    console.log(tale)
+  }
+
+  // useEffect(() => {
+  //     window.addEventListener('scroll', scrollProgress);
+  //     return () => window.removeEventListener('scroll', scrollProgress);
+  // }, [])
 
   let location = useLocation();
 
@@ -27,37 +48,39 @@ function App() {
     window.history.replaceState(null, '', location.pathname);
   }, [location])
 
-  const scrollProgress = () => {
-      const scrollPx = document.documentElement.scrollTop;
-      console.log('scrollPx: ', document.documentElement.scrollTop)
+  // const scrollProgress = () => {
+  //     const scrollPx = document.documentElement.scrollTop;
+  //     console.log('scrollPx: ', document.documentElement.scrollTop)
 
-      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      console.log('winHeightPx: ', winHeightPx)
+  //     const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  //     console.log('winHeightPx: ', winHeightPx)
 
-      const vh = window.innerHeight / 100;
-      const start = 0 * vh;
-      const stop = 100 * vh;
+  //     const vh = window.innerHeight / 100;
+  //     const start = 0 * vh;
+  //     const stop = 100 * vh;
 
-      if (scrollPx > start && scrollPx < stop) {
-      const scrollPos = Math.ceil(1/((scrollPx - start) / winHeightPx))
-      console.log(((scrollPx - start) / (winHeightPx - start)))
-      console.log('scrollPos: ', scrollPos)
-      if (0 < scrollPos && scrollPos < 7) {
-          setCount(scrollPos)
-      }
-      }
-  }
+  //     if (scrollPx > start && scrollPx < stop) {
+  //     const scrollPos = Math.ceil(1/((scrollPx - start) / winHeightPx))
+  //     console.log(((scrollPx - start) / (winHeightPx - start)))
+  //     console.log('scrollPos: ', scrollPos)
+  //     if (0 < scrollPos && scrollPos < 7) {
+  //         setCount(scrollPos)
+  //     }
+  //     }
+  // }
 
   return (
     <div className="page">
-      <Header/>
+      <Header
+        tale={tale}
+      />
       <main className="main">
         <Routes>
           <Route path="*" element={<Navigate to="/#main-heading" />}/>
           <Route path="/" element={
             <>
               <div className="main__title" id="main-heading" smooth>
-                <h1 className="main__title-heading">Ivan<br/>Cher-<br/>ganov</h1>
+                <h1 className="main__title-heading">Ivan<br/>Cherganov</h1>
                 <h2 className="case__subtitle">3D Generalist<br/>Portfolio</h2>
               </div>
               {/* <div className="main__title-letters" id="main-heading" smooth>
@@ -74,69 +97,121 @@ function App() {
               <div className="main__grid">
               <NavHashLink
                 className='main__grid-link main__grid_sanada-01'
-                to='/samurai-portrait#samurai-heading' smooth>
-                  <img className="main__grid-img" src={window.location.origin + `/images/grid/01-samurai-01.jpg`} alt="Sanada"/>
-                  <div className="main__grid-img-number">01</div>
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
+                to='/samurai-portrait#samurai-heading' smooth> 
+                  <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/01-samurai-04.jpg`} alt="Sanada"/>
+                  <div className="main__grid-img-number-wrapper">
+                    <div className="main__grid-img-number">01</div>
+                  </div>
               </NavHashLink>
               <NavHashLink
                 className='main__grid-link main__grid_sanada-02'
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
                 to='/samurai-portrait#samurai-heading' smooth>
-                  <img className="main__grid-img" src={window.location.origin + `/images/grid/01-samurai-02.jpg`} alt="Sanada"/>
-                  <div className="main__grid-img-number">01</div>
+                  <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/01-samurai-02.jpg`} alt="Sanada"/>
+                  <div className="main__grid-img-number-wrapper">
+                    <div className="main__grid-img-number">01</div>
+                  </div>
               </NavHashLink>
               <NavHashLink
                 className='main__grid-link main__grid_sanada-03'
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
                 to='/samurai-portrait#samurai-heading' smooth>
-                  <img className="main__grid-img" src={window.location.origin + `/images/grid/01-samurai-03.jpg`} alt="Sanada"/>
-                  <div className="main__grid-img-number">01</div>
+                  <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/01-samurai-03.jpg`} alt="Sanada"/>
+                  <div className="main__grid-img-number-wrapper">
+                    <div className="main__grid-img-number">01</div>
+                  </div>
               </NavHashLink>
               <NavHashLink
                 className='main__grid-link main__grid_hairstyles-01'
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
                 to='/hairstyles#hairstyles-heading' smooth>
-                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-01.jpg`} alt="Hairstyles"/>
-                <div className="main__grid-img-number">02</div>
+                <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/02-hairstyles-01.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">02</div>
+                </div>
               </NavHashLink>
               {/* <NavHashLink
                 className='main__grid-link main__grid_hairstyles-02'
                 to='/hairstyles#hairstyles-heading' smooth>
-                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-02.jpg`} alt="Hairstyles"/>
-                <div className="main__grid-img-number">02</div>
+                <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/02-hairstyles-02.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">02</div>
+                </div>
               </NavHashLink> */}
               <NavHashLink
                 className='main__grid-link main__grid_hairstyles-04'
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
                 to='/hairstyles#hairstyles-heading' smooth>
-                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-04.jpg`} alt="Hairstyles"/>
-                <div className="main__grid-img-number">02</div>
+                <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/02-hairstyles-04.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">02</div>
+                </div>
               </NavHashLink>
-              <NavHashLink
+              {/* <NavHashLink
                 className='main__grid-link main__grid_hairstyles-05'
                 to='/hairstyles#hairstyles-heading' smooth>
-                <img className="main__grid-img" src={window.location.origin + `/images/grid/02-hairstyles-05.jpg`} alt="Hairstyles"/>
-                <div className="main__grid-img-number">02</div>
-              </NavHashLink>
+                <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/02-hairstyles-05.jpg`} alt="Hairstyles"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">02</div>
+                </div>
+              </NavHashLink> */}
               <NavHashLink
                 className='main__grid-link main__grid_husband-01'
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
                 to='/ideal-husband#ideal-husband-heading' smooth>
-                <img className="main__grid-img main__grid-img_husband-01" src={window.location.origin + `/images/grid/03-husband-01.jpg`} alt="An Ideal Husband"/>
-                <div className="main__grid-img-number">03</div>
+                <img className="main__grid-img main__grid-img_husband-01" src={window.location.origin + `/3d-generalist-site/images/grid/03-husband-01.jpg`} alt="An Ideal Husband"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">03</div>
+                </div>
               </NavHashLink>
               <NavHashLink
                 className='main__grid-link main__grid_husband-02'
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
                 to='/ideal-husband#ideal-husband-heading' smooth>
-                <img className="main__grid-img main__grid-img_husband-02" src={window.location.origin + `/images/grid/03-husband-02.jpg`} alt="An Ideal Husband"/>
-                <div className="main__grid-img-number">03</div>
+                <img className="main__grid-img main__grid-img_husband-02" src={window.location.origin + `/3d-generalist-site/images/grid/03-husband-02.jpg`} alt="An Ideal Husband"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">03</div>
+                </div>
               </NavHashLink>
               {/* <NavHashLink
                 className='main__grid-link main__grid_facial-anatomy-01'
                 to='/facial-anatomy#facial-anatomy-heading' smooth>
-                <img className="main__grid-img" src={window.location.origin + `/images/grid/04-face-anatomy-01.jpg`} alt="Facial Anatomy"/>
-                <div className="main__grid-img-number">04</div>
+                <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/04-face-anatomy-01.jpg`} alt="Facial Anatomy"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">03</div>
+                </div>
               </NavHashLink> */}
-              <NavHashLink
+              <div
+                className='main__grid-link main__grid_blank-01'>
+              </div>
+              <div
+                className='main__grid-link main__grid_blank-02'>
+              </div>
+              {/* <NavHashLink
                 className='main__grid-link main__grid_facial-anatomy-02'
                 to='/facial-anatomy#facial-anatomy-heading' smooth>
-                <img className="main__grid-img" src={window.location.origin + `/images/grid/04-face-anatomy-02.jpg`} alt="Facial Anatomy"/>
-                <div className="main__grid-img-number">04</div>
+                <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/04-face-anatomy-02.jpg`} alt="Facial Anatomy"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">04</div>
+                </div>
+              </NavHashLink> */}
+              <NavHashLink
+                className='main__grid-link main__grid_facial-anatomy-03'
+                onMouseOver={MouseOver}
+                onMouseOut={MouseOut}
+                to='/facial-anatomy#facial-anatomy-heading' smooth>
+                <img className="main__grid-img" src={window.location.origin + `/3d-generalist-site/images/grid/04-face-anatomy-03.jpg`} alt="Facial Anatomy"/>
+                <div className="main__grid-img-number-wrapper">
+                  <div className="main__grid-img-number">04</div>
+                </div>
               </NavHashLink>
               </div>
             </>
@@ -148,37 +223,37 @@ function App() {
                 <h2 className="case__subtitle">My tribute to a great actor<br/>and an absolute beauty<br/>of a samurai armour</h2>
                 <div className="case__toolbox case__toolbox_hero">
                 <Tool
-                    img={'/images/tools-logo/tool-logo-arnold-color.png'}
+                    img={'/3d-generalist-site/images/tools-logo/tool-logo-arnold-color.png'}
                     name={'Arnold'}
                     light={true}
                 />
                 <Tool
-                    img={'/images/tools-logo/tool-logo-maya-color.png'}
+                    img={'/3d-generalist-site/images/tools-logo/tool-logo-maya-color.png'}
                     name={'Maya'}
                     light={true}
                 />
                 <Tool
-                    img={'/images/tools-logo/tool-logo-substance-color.svg'}
+                    img={'/3d-generalist-site/images/tools-logo/tool-logo-substance-color.svg'}
                     name={'Substance\n3D Painter'}
                     light={true}
                     invert={true}
                 />
                 <Tool
-                    img={'/images/tools-logo/tool-logo-zbrush.svg'}
+                    img={'/3d-generalist-site/images/tools-logo/tool-logo-zbrush.svg'}
                     name={'ZBrush'}
                     light={true}
                     invert={true}
                 />
                 </div>
               </div>
-              {/* <img className="case__img" src={window.location.origin + `/images/samurai/keyframes/${count}.png`} alt="Sanada"/> */}
-              {/* <img className="case__img case__img_hero" src={window.location.origin + `/images/samurai/ivan-cherganov-samurai-portrait-01.jpg`} alt="Sanada"/> */}
-              <img className="case__img case__img_hero" src={window.location.origin + `/images/samurai/ivan-cherganov-samurai-portrait-02.jpg`} alt="Sanada"/>
-              <img className="case__img" src={window.location.origin + `/images/samurai/ivan-cherganov-samurai-portrait-04.jpg`} alt="Sanada"/>
-              <img className="case__img case__img_hero" src={window.location.origin + `/images/samurai/ivan-cherganov-samurai-portrait-05.jpg`} alt="Sanada"/>
-              <img className="case__img" src={window.location.origin + `/images/samurai/ivan-cherganov-hairstyle-breakup.gif`} alt="Sanada"/>
-              {/* <img className="case__img" src={window.location.origin + `/images/samurai/ivan-cherganov-samurai-portrait-07.jpg`} alt="Sanada"/> */}
-              {/* <img className="case__img" src={window.location.origin + `/images/samurai/ivan-cherganov-samurai-portrait-10.jpg`} alt="Sanada"/> */}
+              {/* <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/samurai/keyframes/${count}.png`} alt="Sanada"/> */}
+              {/* <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/samurai/ivan-cherganov-samurai-portrait-01.jpg`} alt="Sanada"/> */}
+              <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/samurai/ivan-cherganov-samurai-portrait-02.jpg`} alt="Sanada"/>
+              <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/samurai/ivan-cherganov-samurai-portrait-04.jpg`} alt="Sanada"/>
+              <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/samurai/ivan-cherganov-samurai-portrait-05.jpg`} alt="Sanada"/>
+              <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/samurai/ivan-cherganov-hairstyle-breakup.gif`} alt="Sanada"/>
+              {/* <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/samurai/ivan-cherganov-samurai-portrait-07.jpg`} alt="Sanada"/> */}
+              {/* <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/samurai/ivan-cherganov-samurai-portrait-10.jpg`} alt="Sanada"/> */}
             </Case>
           } />
           <Route path="/hairstyles" element={
@@ -189,114 +264,138 @@ function App() {
                   <h2 className="case__subtitle">Hairstyles for XGen masterclass<br/>I developed as a part of a 2-year<br/>program for 3d generalists<br/>at CG-school in Moscow</h2>
                   <div className="case__toolbox case__toolbox_hero">
                     <Tool
-                      img={'/images/tools-logo/tool-logo-maya-color.png'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-maya-color.png'}
                       name={'Maya'}
                       light={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-arnold-color.png'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-arnold-color.png'}
                       name={'Arnold'}
                       light={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-ps.svg'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-ps.svg'}
                       name={'Photoshop'}
                       light={true}
                       invert={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-zbrush.svg'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-zbrush.svg'}
                       name={'ZBrush'}
                       light={true}
                       invert={true}
                     />
                   </div>
                 </div>
-                <img className="case__img case__img_hero" src={window.location.origin + `/images/hairstyles/ivan-cherganov-pony-tail-side-beauty-render-reverse.jpg`} alt="Hairstyle"/>
-                <img className="case__img" src={window.location.origin + `/images/hairstyles/ivan-cherganov-photoreal-hairstyle-beauty-render-front.jpg`} alt="Hairstyle"/>
-                <img className="case__img" src={window.location.origin + `/images/hairstyles/ivan-cherganov-photoreal-hairstyle-fornt-back-viewport.jpg`} alt="Hairstyle"/>
-                <img className="case__img" src={window.location.origin + `/images/hairstyles/ivan-cherganov-pony-tail-back-beauty-render.jpg`} alt="Hairstyle"/>
-                <img className="case__img" src={window.location.origin + `/images/hairstyles/ivan-cherganov-pony-tail-process.gif`} alt="Hairstyle"/>
-                <img className="case__img" src={window.location.origin + `/images/hairstyles/ivan-cherganov-pony-tail-side-back-viewport.jpg`} alt="Hairstyle"/>
+                <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/hairstyles/ivan-cherganov-pony-tail-side-beauty-render-reverse.jpg`} alt="Hairstyle"/>
+                <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/hairstyles/ivan-cherganov-photoreal-hairstyle-beauty-render-front.jpg`} alt="Hairstyle"/>
+                <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/hairstyles/ivan-cherganov-photoreal-hairstyle-fornt-back-viewport.jpg`} alt="Hairstyle"/>
+                <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/hairstyles/ivan-cherganov-pony-tail-back-beauty-render.jpg`} alt="Hairstyle"/>
+                <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/hairstyles/ivan-cherganov-pony-tail-process.gif`} alt="Hairstyle"/>
+                <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/hairstyles/ivan-cherganov-pony-tail-side-back-viewport.jpg`} alt="Hairstyle"/>
               </>
             </Case>
           } />
           <Route path="/ideal-husband" element={
             <Case>
-              <div className="case__header" id="ideal-husband-heading" smooth>
-                <h1 className="case__title">"An Ideal Husband" character illustrations</h1>
+              <div className="case__header case__header_hero-left" id="ideal-husband-heading" smooth>
+                <h1 className="case__title">An Ideal<br/>Husband<br/>character<br/>illustrations</h1>
                 {/* <h2 className="case__subtitle">My tribute to a great actor and an absolute beauty of a samurai armour</h2> */}
                 <div className="case__toolbox case__toolbox_hero">
                 <Tool
-                    img={'/images/tools-logo/tool-logo-ps-color.png'}
+                    img={'/3d-generalist-site/images/tools-logo/tool-logo-ps-color.png'}
                     name={'Photoshop'}
                     light={true}
                     invert={true}
                 />
                 </div>
               </div>
-              <img className="case__img" src={window.location.origin + `/images/ideal-husband/ivan-cherganov-mrs-cheveley.jpg`} alt="Mrs. Cheveley"/>
-              <img className="case__img" src={window.location.origin + `/images/ideal-husband/ivan-cherganov-sir-chiltern.jpg`} alt="Sir Chiltern"/>
-              <img className="case__img" src={window.location.origin + `/images/ideal-husband/ivan-cherganov-lord-goring.jpg`} alt="Lord Goring"/>
-              <img className="case__img" src={window.location.origin + `/images/ideal-husband/ivan-cherganov-lady-chiltern.jpg`} alt="Lady Chiltern"/>
+              <div className="case__img-wrapper case__img-wrapper_husband">
+                <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/ideal-husband/ivan-cherganov-mrs-cheveley.jpg`} alt="Mrs. Cheveley"/>
+              </div>
+              <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/ideal-husband/ivan-cherganov-sir-chiltern.jpg`} alt="Sir Chiltern"/>
+              <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/ideal-husband/ivan-cherganov-lord-goring.jpg`} alt="Lord Goring"/>
+              <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/ideal-husband/ivan-cherganov-lady-chiltern.jpg`} alt="Lady Chiltern"/>
             </Case>
           } />
           <Route path="/facial-anatomy" element={
-            <Case>
+            <Case caseStyle={'case_facial-anatomy'}>
               <>
-                <div className="case__header case__header_hero" id="facial-anatomy-heading" smooth>
+                <div className="case__header case__header_hero-left" id="facial-anatomy-heading" smooth>
                   <h1 className="case__title">Facial Anatomy Studies</h1>
                   <div className="case__toolbox">
                     <Tool
-                      img={'/images/tools-logo/tool-logo-zbrush.svg'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-zbrush.svg'}
                       name={'ZBrush'}
                       light={true}
                       invert={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-arnold-color.png'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-arnold-color.png'}
                       name={'Arnold'}
                       light={true}
                     />
                   </div>
                 </div>
-                <img className="case__img case__img_hero" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-01.jpg`} alt="Facial Anatomy Studies"/>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-03.jpg`} alt="Facial Anatomy Studies"/>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-04.jpg`} alt="Facial Anatomy Studies"/>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-05.jpg`} alt="Facial Anatomy Studies"/>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-06.jpg`} alt="Facial Anatomy Studies"/>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-portrait-07.jpg`} alt="Facial Anatomy Studies"/>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-all.jpg`} alt="Facial Anatomy Studies"/>
-                <img className="case__img" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-process-gif.gif`} alt="Facial Anatomy Studies"/>
-                <img className="case__img case__img_hero" src={window.location.origin + `/images/facial-antomy/ivan-cherganov-bale.jpg`} alt="Bale"/>
+                <div className="case__img-wrapper case__img-wrapper_anatomy">
+                  <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-portrait-01.jpg`} alt="Facial Anatomy Studies"/>
+                  <div className="case__img-shadow"></div>
+                </div>
+                <div className="case__img-wrapper">
+                  <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-portrait-03.jpg`} alt="Facial Anatomy Studies"/>
+                  <div className="case__img-shadow"></div>
+                </div>
+                <div className="case__img-wrapper">
+                  <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-portrait-04.jpg`} alt="Facial Anatomy Studies"/>
+                  <div className="case__img-shadow"></div>
+                </div>  
+                <div className="case__img-wrapper">              
+                  <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-portrait-05.jpg`} alt="Facial Anatomy Studies"/>
+                  <div className="case__img-shadow"></div>
+                </div> 
+                <div className="case__img-wrapper">
+                  <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-portrait-06.jpg`} alt="Facial Anatomy Studies"/>
+                  <div className="case__img-shadow"></div>
+                </div>
+                <div className="case__img-wrapper">
+                  <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-portrait-07.jpg`} alt="Facial Anatomy Studies"/>
+                  <div className="case__img-shadow"></div>
+                </div>
+                <div className="case__img-wrapper">
+                  <img className="case__img case__img_hero" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-all.jpg`} alt="Facial Anatomy Studies"/>
+                  <div className="case__img-shadow"></div>
+                </div>
+                <img className="case__img" src={window.location.origin + `/3d-generalist-site/images/facial-antomy/ivan-cherganov-process-gif.gif`} alt="Facial Anatomy Studies"/>
               </>
             </Case>
           } />
           <Route path="/contacts" element={
             <Contacts id="contacts-heading" smooth>
-                <img className="contacts__avatar" src="images/contacts/ivan-cherganov-avatar-tall.jpeg" alt="Ivan Cherganov Avatar"/>
-                <div className="contacts__block">
-                  <h2 className="contacts__subtitle">Ivan Cherganov</h2>
-                  <p className="contacts__text">I'm a 3D Character Artist / 3D Grooming Artist working in the game and film industry</p>
-                  <div className="contacts__point">
-                    <a href="https://t.me/ivan_cherganov" target='_blank' rel="noreferrer" className="contacts__button">
-                      <img className="contacts__button-img" src='images/contacts/telegram-logo-button.png' alt="Telegram"/>
-                      <p className="contacts__button-text">Write me a message</p>
-                    </a>
-                    <a href="mailto:ivan.cherganov@gmail.com" className="contacts__button">
-                      <img className="contacts__button-img" src='images/contacts/email-button.png' alt="Email"/>
-                      <p className="contacts__button-text">Write me an email</p>
-                    </a>
-                    <a href="https://www.artstation.com/ivan_cherganov" target='_blank' rel="noreferrer" className="contacts__button">
-                      <img className="contacts__button-img" src='images/contacts/artstation-logo-button.svg' alt="ArtStation"/>
-                    </a>
+                <div className="contacts__bio-wrapper">
+                  <img className="contacts__avatar" src="3d-generalist-site/images/contacts/ivan-cherganov-avatar-tall.jpeg" alt="Ivan Cherganov Avatar"/>
+                  <div className="contacts__block contacts__block_bio">
+                    <h2 className="contacts__subtitle">Ivan<br/>Cherganov</h2>
+                    <p className="contacts__text">I'm a 3D Character Artist / 3D Grooming Artist working in the game and film industry</p>
+                    <div className="contacts__point">
+                      <a href="https://t.me/ivan_cherganov" target='_blank' rel="noreferrer" className="contacts__button">
+                        <img className="contacts__button-img" src='3d-generalist-site/images/contacts/telegram-logo-button.png' alt="Telegram"/>
+                        <p className="contacts__button-text">Write me a message</p>
+                      </a>
+                      <a href="mailto:ivan.cherganov@gmail.com" className="contacts__button">
+                        <img className="contacts__button-img" src='3d-generalist-site/images/contacts/email-button.png' alt="Email"/>
+                        <p className="contacts__button-text">Write me an email</p>
+                      </a>
+                      <a href="https://www.artstation.com/ivan_cherganov" target='_blank' rel="noreferrer" className="contacts__button">
+                        <img className="contacts__button-img" src='3d-generalist-site/images/contacts/artstation-logo-button.svg' alt="ArtStation"/>
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="contacts__block">
                   <h2 className="contacts__subtitle">Experience</h2>
                   <a href="https://quebec.ubisoft.com" target='_blank' rel="noreferrer" className="contacts__point contacts__point_exp">
                     <p className="contacts__period">2021–2023</p>
-                    <img className="contacts__img" src='images/contacts/ubisoft-quebec-logo.svg' alt="Ubisoft Quebec"/>
+                    <img className="contacts__img" src='3d-generalist-site/images/contacts/ubisoft-quebec-logo.svg' alt="Ubisoft Quebec"/>
                     <p className="contacts__text">3D Character Artist</p>
                   </a>
                 </div>
@@ -304,7 +403,7 @@ function App() {
                   <h2 className="contacts__subtitle">Education</h2>
                   <a href="https://scream.school" target='_blank' rel="noreferrer" className="contacts__point contacts__point_exp">
                     <p className="contacts__period">2014–2016</p>
-                    <img className="contacts__img contacts__img_scream-school" src='images/contacts/scream-school-logo.svg' alt="Scream School"/>
+                    <img className="contacts__img contacts__img_scream-school" src='3d-generalist-site/images/contacts/scream-school-logo.svg' alt="Scream School"/>
                     <p className="contacts__text">Visual effects and Character Art for films</p>
                   </a>
                 </div>
@@ -312,40 +411,40 @@ function App() {
                   <h2 className="contacts__subtitle">Tools</h2>
                   <div className="contacts__toolbox">
                   <Tool
-                      img={'/images/tools-logo/tool-logo-substance-color.svg'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-substance-color.svg'}
                       name={'Substance\n3D Painter'}
                       light={true}
                       invert={true}
                       contacts={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-ps-color.png'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-ps-color.png'}
                       name={'Photoshop'}
                       light={true}
                       invert={true}
                       contacts={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-lightroom.svg'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-lightroom.svg'}
                       name={'Lightroom'}
                       light={true}
                       invert={true}
                       contacts={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-maya-color.png'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-maya-color.png'}
                       name={'Maya'}
                       light={true}
                       contacts={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-arnold-color.png'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-arnold-color.png'}
                       name={'Arnold'}
                       light={true}
                       contacts={true}
                     />
                     <Tool
-                      img={'/images/tools-logo/tool-logo-zbrush.svg'}
+                      img={'/3d-generalist-site/images/tools-logo/tool-logo-zbrush.svg'}
                       name={'ZBrush'}
                       light={true}
                       invert={true}

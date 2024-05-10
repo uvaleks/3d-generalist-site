@@ -7,16 +7,18 @@
 }
 
 .contacts__avatar {
-    height: 200px;
-    width: 200px;
-    position: fixed;
-    left: 100px;
-    top: 50px;
+    height: 150px;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.contacts__bio-wrapper {
+    display: flex;
 }
 
 .contacts__subtitle {
     color: white;
-    font-family: "Haas";
+    font-family: 'Haas', sans-serif;
     letter-spacing: 0.03em;
     margin: 0;
 }
@@ -104,6 +106,10 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.contacts__block_bio {
+    justify-content: space-between;
 }
 
 .contacts__block_first {
