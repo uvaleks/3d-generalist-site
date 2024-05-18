@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/3d-generalist-site/static/css/main.ed57d2eb.css",
-    "main.js": "/3d-generalist-site/static/js/main.83f0051f.js",
+    "main.js": "/3d-generalist-site/static/js/main.c629f600.js",
     "static/media/ivan-cherganov-process-gif.gif": "/3d-generalist-site/static/media/ivan-cherganov-process-gif.7a20f69795bb4213f1f0.gif",
     "static/media/ivan-cherganov-mrs-cheveley.jpg": "/3d-generalist-site/static/media/ivan-cherganov-mrs-cheveley.7c4f34f1827439d37a49.jpg",
     "static/media/ivan-cherganov-lord-goring.jpg": "/3d-generalist-site/static/media/ivan-cherganov-lord-goring.d043700bc6307e2d2d8b.jpg",
@@ -69,10 +69,10 @@
     "static/media/tool-logo-lightroom.svg": "/3d-generalist-site/static/media/tool-logo-lightroom.6a09e15624fd277f3413de072a8b4188.svg",
     "index.html": "/3d-generalist-site/index.html",
     "main.ed57d2eb.css.map": "/3d-generalist-site/static/css/main.ed57d2eb.css.map",
-    "main.83f0051f.js.map": "/3d-generalist-site/static/js/main.83f0051f.js.map"
+    "main.c629f600.js.map": "/3d-generalist-site/static/js/main.c629f600.js.map"
   },
   "entrypoints": [
     "static/css/main.ed57d2eb.css",
-    "static/js/main.83f0051f.js"
+    "static/js/main.c629f600.js"
   ]
 }
