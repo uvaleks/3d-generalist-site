@@ -6,8 +6,15 @@
     height: 100%;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
     .page {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page {
+        flex-direction: column;
+        background: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, .4) 10px, rgba(255, 255, 255, .4) 11px);
     }
 }

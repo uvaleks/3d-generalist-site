@@ -6,13 +6,15 @@
     background-color: var(--light);
     background: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, .4) 10px, rgba(255, 255, 255, .4) 11px);
     padding: 33px 50px 0px;
+    min-width: 400px;
+    width: 400px;
 }
 
 .header__title-wrapper {
     font-size: 72px;
     display: flex;
     flex-direction: column;
-    gap: 2vw;
+    gap: 30px;
     left: 50px;
     white-space: pre-line;
     margin: 0;
@@ -55,7 +57,7 @@
 
 .header__menu {
     position: sticky;
-    top: 40px;
+    top: 30px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -121,10 +123,14 @@
 }
 
 .header__burger {
+    z-index: 2;
     display: none;
     height: 18px;
-    position: relative;
+    position: fixed;
+    right: 4vw;
+    top: 4vw;
     width: 20px;
+    min-width: 20px;
     padding: 10px;
     cursor: pointer;
     background: white;
@@ -179,20 +185,33 @@
     transform: scale(0);
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
     .header {
         /* background: repeating-linear-gradient(0deg, transparent 0px, black 1px, black 15px, transparent 15px); */
         background: transparent;
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-between;
-        position: fixed;
         width: 100%;
         z-index: 1;
         top: 0;
-        padding: 5vw;
+        padding: 4vw;
     }
 
     .header.header_active {
+        
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__menu_active {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 4vw;
+        width: 100%;
         background: rgba(0,0,0,.75);
         backdrop-filter: blur(15px);
     }
@@ -201,22 +220,13 @@
         display: block;
     }
 
-    .header__menu {
-        display: none;
-    }
-
-    .header__menu_active {
-        position: relative;
-        display: flex;
-    }
-
     .header__title-wrapper {
-        padding-top: 50px;
-        gap: 5vw;
+        padding-right: 12vw;
+        gap: 4vw;
     }
 
     .header__toolbox {
-        padding-bottom: 5vw;
+ 
     }
 }
 

@@ -4,6 +4,7 @@
     flex-direction: column;
     gap: 45px;
     padding-top: 50px;
+    min-height: 100vh;
 }
 
 .contacts__avatar {
@@ -155,4 +156,32 @@
 
 .contacts__button:hover {
     opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+    .contacts__avatar {
+        height: auto;
+        width: 50%;
+        margin-right: 0;
+        align-self: center;
+    }
+
+    .contacts__bio-wrapper {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .contacts__point {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .contacts__block {
+        padding-left: 0;
+    }
+
+    .contacts__toolbox {
+        flex-direction: column;
+        align-items: start;
+    }
 }

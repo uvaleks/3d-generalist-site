@@ -1,20 +1,32 @@
 .case {
     display: flex;
-    flex-direction: column;
-    gap: 60px;
+    flex-direction: row;
+}
 
-    gap: 2vw;
+.case__img-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
 .case__img {
     /* view-timeline-name: --subjectReveal;
     animation-timeline: --subjectReveal; */
     /* max-width: calc(100vh - 200px); */
-    max-height: calc(100vh - 4vw);
+    max-height: calc(100vh - 20px);
     width: max-content;
     max-width: 100%;
     /* animation: fade-in 1s ease-in; */
     /* animation-timeline: view(10px, 10px); */
+}
+
+.case__img:first-of-type {
+    padding-top: 10px;
+}
+
+.case__img:last-of-type {
+    padding-bottom: 10px;
 }
 
 .case__img_hero {
@@ -52,6 +64,6 @@
     to {opacity: 1}
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
 
 }
