@@ -1,6 +1,7 @@
 .case {
     display: flex;
     flex-direction: row;
+    padding-left: 10px;
 }
 
 .case__img-wrapper {
@@ -22,11 +23,11 @@
 }
 
 .case__img:first-of-type {
-    padding-top: 10px;
+    /* padding-top: 10px; */
 }
 
 .case__img:last-of-type {
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 .case__img_hero {

@@ -250,6 +250,7 @@ function App() {
           <Route path="*" element={<Navigate to="/main/#main" />}/>
           <Route path="/main" element={
             <>
+              <div className="main__vertical-stripe-wrapper">
               <div className="main__vertical-stripe"></div>
               <div className="main__grid">
               <NavHashLink
@@ -348,6 +349,7 @@ function App() {
                   <div className="main__grid-img-number">04</div>
                 </div>
               </NavHashLink>
+              </div>
               </div>
             </>
           } />
@@ -530,6 +532,7 @@ function App() {
             </>
           } />
         </Routes>
+        <footer className="main__footer">Developed by <a className="main__footer-link" href="https://github.com/uvaleks" target="_blank">Aleksey Uvarov</a> in 2024</footer>
       </main>
       <Footer/>
     </div>
